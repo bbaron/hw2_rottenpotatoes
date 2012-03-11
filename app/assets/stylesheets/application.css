@@ -2,7 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   background: White;
-  color: DarkSlateGrey;
+  color: #2F4F4F;
   font-family: Tahoma, Verdana, sans-serif;
   font-size: 10pt;
 }
@@ -22,14 +22,14 @@ h1 {
   font-style: italic;
   display: block;
   width: 100%;
-  border-bottom: 1px solid DarkSlateGrey;
+  border-bottom: 1px solid #2F4F4F;
 }
 h1.title {
   margin: 0 0 1em;
   padding: 10px;
   background-color: orange;
   color: white;
-  border-bottom: 4px solid gold;
+  border-bottom: 4px solid #FFD700;
   font-size: 2em;
   font-style: normal;
 }
@@ -42,7 +42,7 @@ table#movies {
 table#movies th {
   border: 2px solid white;
   font-weight: bold;
-  background-color: wheat;
+  background-color: #F5DEB3;
 }
 table#movies th, table#movies td {
   padding: 4px;
@@ -58,4 +58,8 @@ form label {
   line-height: 25px;
   font-weight: bold;
   color: maroon;
+}
+
+table#movies th.hilite {
+  background-color: yellow;
 }
