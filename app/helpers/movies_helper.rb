@@ -4,7 +4,7 @@ module MoviesHelper
     count.odd? ?  "odd" :  "even"
   end
   def header_class(col)
-    col == @sort_by ? 'hilite' : ''
+    col.to_s == @sort_by ? { :class => 'hilite'} : {}
   end
   
   def link_header_to(text, field)
