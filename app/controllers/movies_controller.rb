@@ -7,8 +7,17 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @sort_by = params[:sort]
+    if params[:commit]
+      ratings = params[:ratings] || {}
+    else
+      ratings = session[:ratings] || {}
+    end
+    @selected_ratings = ratings.keys
+    session[:ratings] = ratings
+    @sort_by = params[:sort] || session[:sort]
+    session[:sort] = @sort_by
     @movies = Movie.order(@sort_by)
+    @all_ratings = Movie.get_all_ratings
   end
 
   def new
