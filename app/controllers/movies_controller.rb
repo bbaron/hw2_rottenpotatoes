@@ -16,7 +16,14 @@ class MoviesController < ApplicationController
     session[:ratings] = ratings
     @sort_by = params[:sort] || session[:sort]
     session[:sort] = @sort_by
-    @movies = Movie.order(@sort_by)
+    if (@selected_ratings.size > 0)
+      @movies = Movie
+          .where(:rating => @selected_ratings)
+          .order(@sort_by)
+    else 
+      @movies = Movie
+          .order(@sort_by)
+    end
     @all_ratings = Movie.get_all_ratings
   end
 

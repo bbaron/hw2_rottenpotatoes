@@ -14,4 +14,7 @@ module MoviesHelper
   def rating_check_box_tag(rating)
     check_box_tag("ratings[#{rating}]", 1, @selected_ratings.include?(rating), :id => 'ratings_' + rating)
   end
+  def show_release_date
+    @movie.release_date ? @movie.release_date.strftime("%B %d, %Y") : "No Release Date"
+  end
 end
